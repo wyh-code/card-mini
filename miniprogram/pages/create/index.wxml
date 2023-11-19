@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view>
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+  <mp-toptips msg="{{msg}}" type="success" show="{{msg}}" delay="1500"></mp-toptips>
+  <mp-form id="form" models="{{form}}">
+    <mp-cells ext-class="my-cells">
+      <mp-cell class="form_item" prop="cardName" title="账户名称">
+        <picker mode="selector" bindchange="bindAccountChange" range='{{cards}}' range-key="{{'label'}}" >
+          <view class="picker">{{form.accountName}}</view>
+        </picker>
+      </mp-cell>
+      <mp-cell class="form_item" prop="billType" title="账单类型">
+        <picker mode="selector" bindchange="bindBillTypeChange" range='{{billTypeArray}}' range-key="{{'label'}}" >
+          <view class="picker">{{form.billType}}</view>
+        </picker>
+      </mp-cell>
+      <mp-cell wx:if="{{form.billTypeCode === 'BILL_PAY'}}" class="form_item" prop="payType" title="支出类型">
+        <picker mode="selector" bindchange="bindPayTypeChange" range='{{payTypeArray}}' range-key="{{'label'}}" >
+          <view class="picker">{{form.payType}}</view>
+        </picker>
+      </mp-cell>
+      <mp-cell class="form_item" prop="payAmount" title="账单金额">
+        <input bindinput="formInputChange" value="{{form.payAmount}}" data-field="payAmount" class="weui-input" placeholder="请填写账单金额" />
+      </mp-cell>
+      <mp-cell wx:if="{{form.billTypeCode === 'BILL_CARD' || form.billTypeCode === 'BILL_CASH'}}" class="form_item" prop="incomeAccount" title="收款账户">
+        <picker mode="selector" bindchange="bindIncomeAccountChange" range='{{incomeAccountArray}}' range-key="{{'label'}}" >
+          <view class="picker">{{form.incomeAccount}}</view>
+        </picker>
+      </mp-cell>
+      <mp-cell wx:if="{{form.billTypeCode === 'BILL_CARD' || form.billTypeCode === 'BILL_CASH'}}" class="form_item" prop="incomeAmount" title="收款金额">
+        <input bindinput="formInputChange" value="{{form.incomeAmount}}" data-field="incomeAmount" class="weui-input" placeholder="请填写收款金额" />
+      </mp-cell>
+      <mp-cell class="form_item form-item-textarea" prop="remark" title="备注">
+        <input bindinput="formInputChange" value="{{form.remark}}" data-field="remark" class="weui-input" placeholder="请填写备注" />
+      </mp-cell>
+    </mp-cells>
+    <button class="weui-btn submit-btn" type="primary" bindtap="submitForm">提交</button>
+  </mp-form>
+</view>

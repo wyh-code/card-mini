@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="box record-detail">
+  <image mode="aspectFit" class="detail-icon" src="{{src}}" />
+   <view class="detail-list">
+      <view class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">账户类型</view>
+        <view class="font-text">{{info.accountType}}</view>
+      </view>
+      <view class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">账户名称</view>
+        <view class="font-text">{{info.accountName}}</view>
+      </view>
+      <view class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">户主姓名</view>
+        <view class="font-text">{{info.userName}}</view>
+      </view>
+      <view wx:if="{{info.accountTypeCode === 1}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">固定额度</view>
+        <view class="font-text">{{info.amountFixed}}</view>
+      </view>
+      <view wx:if="{{info.accountTypeCode === 1}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">当前额度</view>
+        <view class="font-text">{{info.amountCurrent}}</view>
+      </view>
+      <view class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">可用额度</view>
+        <view class="font-text">{{info.amountAvailable}}</view>
+      </view>
+      <view wx:if="{{info.accountTypeCode === 1}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">账单日</view>
+        <view class="font-text">{{info.dateBill}}日</view>
+      </view>
+      <view wx:if="{{info.accountTypeCode === 1}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">还款日</view>
+        <view class="font-text">{{info.dateRepayment}}日</view>
+      </view>
+   </view>
+  </view>
+  <view class="footer">暂无更多内容</view>
+</view>

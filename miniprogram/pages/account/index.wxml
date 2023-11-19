@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<view class="container" bind:tap="clickPage">
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+  <mp-toptips msg="{{msg}}" type="success" show="{{msg}}" delay="1500"></mp-toptips>
+  <view class="header">
+    <view class="flex user">
+      <image wx:if="{{login}}" class="user-avatar" src="{{avatarUrl}}"></image>
+      <button wx:if="{{!login}}" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <view class="loginBtn">点击登录</view>
+      </button>
+    </view>
+    <view class="flex header-preview">
+      <view wx:for="{{previewList}}" wx:for-item="item" wx:key="index" class="header-preview-item">
+        <view class="font-bold">{{item.value}}</view>
+        <view class="font-desc">{{item.label}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="box active-card">
+    <view class="font-tip card-title active-card-color">
+      <view>信用卡剩余欠款</view>
+      <view>{{time}}</view>
+    </view>
+    <view class="font-bold active-card-color info-payable">{{payable}}</view>
+    <view class="font-tip active-card-color info-tip">
+      <view class="info-tip-item" wx:for="{{infoTip}}" wx:for-item="item" wx:key="index">
+        <view class="info-tip-label">{{item.label}}</view>
+        <view class="info-tip-num">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="box card">
+    <view class="flex">
+      <view class="font-title">当前账户</view>
+      <view class="font-text add-text active-btn" bindtap="add">新增</view>
+    </view>
+    <view>
+      <view class="account-item-container" wx:for="{{cards}}" wx:for-item="item" wx:key="index">
+        <mp-slideview data-id="{{item._id}}" bindbuttontap="bindbuttontap" buttons="{{buttons}}" show="{{item._id === showId}}" bind:tap="toDetail" bindshow="bindshow">
+          <view class="account-item">
+            <view class="flex">
+              <view class="font-text font-bold">{{item.accountName}}</view>
+              <view class="font-title font-bold font-34">{{item.amountAvailable}}</view>
+            </view>
+            <view class="flex font-tip">
+              <view>{{item.accountType}}</view>
+              <view wx:if="{{item.accountTypeCode === 1}}">账单日：{{item.dateBill}}日</view>
+              <!-- <view>本月支出账单：{{0}}元</view> -->
+            </view>
+          </view>
+        </mp-slideview>
+      </view>
+    </view>
+    <not-found wx:if="{{!cards.length}}" type="data" msg="暂无数据"></not-found>
+  </view>
+
+  <view class="flex">
+    <view class="font-tip call-owner" bind:tap="callOwner">联系作者</view>
+  </view>
+  <view class="footer">暂无更多内容</view>
+  <view class="add-btn" bindtap="addRecord">
+    <image class="add-icon" src="../../images/add.png" mode="aspectFit"/>
+    <view class="add-text">记一笔</view>
+  </view>
+  <modal hidden="{{modalHidden}}" bindconfirm="modalCandel" bindcancel="modalCandel">
+    <image class="owner-image" src="../../images/owner.jpg" mode='aspectFit'></image>
+  </modal>
+</view>

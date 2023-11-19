@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="box record-detail">
+    <image mode="aspectFit" class="detail-icon" src="{{src}}" />
+    <view class="font-text font-30 detail-type">{{info.accountName}}</view>
+    <view class="font-bold detail-payAmount">{{info.payAmount}}</view>
+   <view class="detail-list">
+      <view class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">创建时间</view>
+        <view class="font-text">{{info.time}}</view>
+      </view>
+      <view class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">账单类型</view>
+        <view class="font-text">{{info.billType}}</view>
+      </view>
+      <view wx:if="{{info.payType}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">支出类型</view>
+        <view class="font-text">{{info.payType}}</view>
+      </view>
+      <view wx:if="{{info.incomeAccount}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">收款账户</view>
+        <view class="font-text">{{info.incomeAccount}}</view>
+      </view>
+      <view wx:if="{{info.incomeAmount}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">收款金额</view>
+        <view class="font-text">{{info.incomeAmount}}</view>
+      </view>
+      <view wx:if="{{info.incomeLoss}}" class="detail-item font-tip font-28 flex">
+        <view class="detail-item-label">损益</view>
+        <view class="font-text">{{info.incomeLoss}}</view>
+      </view>
+      <view wx:if="{{info.remark}}" class="detail-item font-tip font-28 flex detail-item-remark">
+        <view class="detail-item-label">备注</view>
+        <view class="font-text detail-item-value">{{info.remark}}</view>
+      </view>
+   </view>
+  </view>
+  <view class="footer">暂无更多内容</view>
+</view>

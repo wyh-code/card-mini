@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "not-found": "../../components/not-found/index.js",
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "mp-toptips": "weui-miniprogram/toptips/toptips"
+  },
+  "navigationBarTitleText": "账单",
+  "backgroundColor": "#F3F4F5",
+  "navigationBarBackgroundColor": "#07cb7c",
+  "navigationBarTextStyle": "white"
+}

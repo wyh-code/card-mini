@@ -1,0 +1,39 @@
+.container {
+  padding-top: 30rpx;
+}
+
+.detail-icon {
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  margin: 10rpx auto;
+}
+.text-center{
+  text-align: center;
+}
+.detail-type {
+  text-align: center;
+  margin: 20rpx 0 10rpx;
+}
+.detail-payAmount {
+  font-size: 50rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.detail-list {
+  padding: 30rpx 40rpx;
+}
+.detail-item {
+  padding-top: 20rpx;
+  justify-content: flex-start;
+}
+.detail-item-remark {
+  align-items: flex-start;
+}
+.detail-item-label {
+  width: 160rpx;
+  min-width: 160rpx;
+}
+.detail-item-value {
+  word-break: break-all;
+}

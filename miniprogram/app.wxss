@@ -1,0 +1,156 @@
+
+/**app.wxss**/
+view {
+  box-sizing: border-box;
+}
+page {
+  background: #f2f3f5;
+  /* background: #EDEDED; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 60rpx;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+button {
+  background: initial;
+}
+button:focus{
+  outline: 0;
+}
+button::after{
+  border: none;
+}
+
+.font-bold {
+  /* color: #242830; */
+  color: #1E1E1E;
+  font-weight: 600;
+  font-size: 34rpx;
+}
+.font-title {
+  color: #1E1E1E;
+  /* color: #242830; */
+  font-weight: 500;
+  font-size: 32rpx;
+}
+.font-text {
+  /* color: #505462; */
+  color: #242830;
+  font-size: 28rpx;
+}
+.font-tip {
+  /* color: #afb1b8; */
+  color: #B7B7B7;
+  font-size: 26rpx;
+}
+.font-desc {
+  color: #B7B7B7;
+  font-size: 24rpx;
+}
+.font-20 {
+  font-size: 20rpx;
+}
+.font-24 {
+  font-size: 24rpx;
+}
+.font-26 {
+  font-size: 26rpx;
+}
+.font-28 {
+  font-size: 28rpx;
+}
+.font-30 {
+  font-size: 30rpx;
+}
+.font-32 {
+  font-size: 32rpx;
+}
+.font-34 {
+  font-size: 34rpx;
+}
+.font-36 {
+  font-size: 36rpx;
+}
+.font-40 {
+  font-size: 40rpx;
+}
+.padding-2 {
+  padding: 2rpx 0;
+}
+
+/* .card-title-bg {
+  background: #e9eaef;
+  margin: -30rpx;
+  padding: 30rpx;
+} */
+
+
+
+.box {
+  padding: 30rpx 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 0 20rpx;
+  overflow: hidden;
+}
+
+.active-card {
+  background: #07cb7c;
+  color: #fff;
+}
+.active-card-color {
+  color: #fff;
+}
+
+/* .active {
+  color: #ff6600;
+} */
+
+.cards-item-not {
+  color: rgba(0,0, 0, .4);
+  text-align: center;
+  margin: 40rpx 0rpx 20rpx;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #afb1b8;
+  font-size: 26rpx;
+  margin-top: 50rpx;
+  text-align: center;
+}
+
+.footer::after, .footer::before{
+  content: '';
+  height: 2rpx;
+  background: #dfe3e5;
+  width: 20vw;
+  margin: 0 20rpx;
+}
+
+
+.call-owner {
+  margin: 50rpx auto -30rpx;
+  color: #07cb7c;
+  text-align: center;
+}
+
+.submit-btn {
+  margin-top: 80rpx;
+  width: 80vw !important;
+}
+
+.edit-class {
+  background: #07cb7c !important;
+}
+.warn-color {
+  color: #fa5151;
+}

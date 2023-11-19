@@ -1,0 +1,156 @@
+
+.not-found-container {
+  padding-top: 200rpx;
+}
+
+.month-record {
+  padding: 20rpx 30rpx;
+  margin-bottom: 30rpx;
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+}
+.month-record-title {
+  justify-content: flex-start;
+}
+.month-record-icon {
+  margin-right: 15rpx;
+  width: 60rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.month-record-icon-title{
+  background: rgba(25,171,131, 1);
+  padding: 8rpx;
+}
+.month-record-icon-month {
+  text-align: center;
+  background-color: rgba(255,255,255, .8);
+  color: rgba(25,171,131, 1);
+}
+.month-record-tip {
+  margin-top: 15rpx;
+}
+.month-record-tip-item{
+  justify-content: flex-start;
+  width: 50%;
+}
+.month-record-tip-num {
+  margin-left: 5rpx;
+}
+
+.record-month-item {
+  margin: 0rpx 20rpx;
+}
+.record-month-title {
+  padding: 10rpx 30rpx;
+  justify-content: flex-start;
+  color: #B2B2B2;
+}
+.record-month-title-month {
+  color: #8F8F8F;
+}
+.record-month-title-border {
+  background: #D7D7D7;
+  width: 1rpx;
+  height: 20rpx;
+  margin: 0 15rpx;
+}
+.record-month-title-tip {
+  margin-left: 20rpx;
+}
+.record-item {
+  border-radius: 20rpx;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 12rpx 2rpx rgba(150, 150, 150, 0.15);
+  /* box-shadow: 0 0 12rpx 2rpx rgba(0, 0, 0, 0.15); */
+}
+.record-item:not(:last-child){
+  margin-bottom: 30rpx;
+}
+.record-item-title {
+  padding: 30rpx;
+  background-color: #f9f9fa;
+}
+
+.record-item-day {
+  margin-left: 20rpx;
+}
+.record-item-title-tip {
+  margin-left: 20rpx;
+}
+.record-item-title-icon {
+  padding: 5rpx;
+  line-height: 1;
+  margin-right: 8rpx;
+  color: #838383;
+  background: #F2F2F2;
+  border-radius: 5rpx;
+}
+
+.record-item-content {
+  justify-content: flex-start;
+  background: #fff;
+  padding: 0 30rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.record-item-content-remove {
+  height: 0;
+  overflow: hidden;
+}
+.record-item-content-accountRemove {
+  /* opacity: .8; */
+  /* background: #f5f5f5; */
+}
+.record-item-content-info-label {
+  position: relative;
+}
+
+.record-item-content-info-label-tip {
+  position: absolute;
+  left: 140rpx;
+  top: 5rpx;
+  white-space: nowrap;
+}
+
+.record-item-content-icon {
+  margin-right: 30rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.record-item-content-info {
+  flex: 1;
+  align-items: flex-start;
+  padding: 25rpx 0;
+  border-bottom: 1px solid #EFEFEF;
+}
+.record-item-content-info-last {
+  border: none;
+}
+.record-item-content-info-desc {
+  margin-top: 5rpx;
+}
+.record-item-content-info-desc-border {
+  background: #EFEFEF;
+  width: 2rpx;
+  height: 20rpx;
+  margin: 0 10rpx;
+}
+.record-item-content-info-remark {
+  width: 30vw;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;    /* 根据业务需求设置第几行显示省略号 */
+  overflow:hidden;
+}
+
+.record-item-content-info-amount {
+  text-align: right;
+}
+.record-item-add-mount {
+  color: #ffc41e;
+  line-height: 1;
+}

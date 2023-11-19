@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/account/index",
+    "pages/accountDetail/index",
+    "pages/record/index",
+    "pages/create/index",
+    "pages/add/index",
+    "pages/recordDetail/index"
+  ],
+  "window": {
+    "backgroundColor": "#f2f3f5",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f2f3f5",
+    "navigationBarTitleText": "信用卡管理",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#c2c2c2",
+    "selectedColor": "#07cb7c",
+    "list": [
+      {
+        "pagePath": "pages/account/index",
+        "text": "账户",
+        "iconPath": "images/zhanghu.png",
+        "selectedIconPath": "images/zhanghu-active.png"
+      },
+      {
+        "pagePath": "pages/record/index",
+        "text": "账单",
+        "iconPath": "images/zhangdan.png",
+        "selectedIconPath": "images/zhangdan-active.png"
+      }
+    ]
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,96 @@
+<!--index.wxml-->
+<view wx:if="{{login}}" class="container" bind:tap="clickPage">
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+  <mp-toptips msg="{{msg}}" type="success" show="{{msg}}" delay="1500"></mp-toptips>
+  <view class="active-card month-record" id="record-title">
+    <view class="font-bold active-card-color flex month-record-title font-40">
+      <view class="month-record-icon">
+        <view class="month-record-icon-title"></view>
+        <view class="font-tip active-card-color month-record-icon-month">{{month}}</view>
+      </view>
+      <view>{{year}}年{{month}}月</view>
+    </view>
+    <View class="flex font-text active-card-color month-record-tip">
+      <view class="flex month-record-tip-item">
+        <view>总出账：¥</view>
+        <view class="font-bold active-card-color month-record-tip-num">{{monthInfo[currentMonth].countPay || '0.00'}}</view>
+      </view>
+      <view class="flex month-record-tip-item">
+        <view>总入账：¥</view>
+        <view class="font-bold active-card-color month-record-tip-num">{{monthInfo[currentMonth].countIncome || '0.00'}}</view>
+      </view>
+    </View>
+    <!-- <view class="font-20 active-card-color">出账 = 个人刷卡 + 日常支出 + 转账支出 + 提现</view>
+    <view class="font-20 active-card-color">入账 = 刷卡收入 + 账单还款 + 日常收入 + 转账收入 + 提现收入</view> -->
+  </view>
+  <view wx:for="{{recordList}}" wx:key="index" class="record-month-item">
+    <view wx:if="{{item.showMonthKey}}" class="flex font-tip record-month-title">
+      <view class="record-month-title-month">{{item.year}}年{{item.month}}月</view>
+      <view class="record-month-title-border"></view>
+      <view class="flex">
+        <view class="flex">
+          <view>出账¥</view>
+          <view class="font-bold font-tip">{{monthInfo[item.monthKey].countPay}}</view>
+        </view>
+        <view class="flex record-month-title-tip">
+          <view>入账¥</view>
+          <view class="font-bold font-tip">{{monthInfo[item.monthKey].countIncome}}</view>
+        </view>
+      </view>
+    </view>
+    <view id="{{item.id}}" data-month="{{item.monthKey}}" class="record-item" wx:for="{{item.list}}" wx:key="index">
+      <view class="flex record-item-title">
+        <view class="flex font-bold font-32 ">
+          <view>{{item.month}}月{{item.date}}日</view>
+          <view class="record-item-day">{{item.day}}</view>
+        </view>
+        <view class="flex font-tip">
+          <view class="flex">
+            <view class="record-item-title-icon">出</view>
+            <view class="font-bold font-28">{{item.countPay}}</view>
+          </view>
+          <view class="flex record-item-title-tip">
+            <view class="record-item-title-icon">入</view>
+            <view class="font-bold font-28">{{item.countIncome}}</view>
+          </view>
+        </view>
+      </view>
+      <mp-slideview disable="{{!item.recordAccountType}}" show="{{item._id === showId}}" data-id="{{item._id}}" data-pageNo="{{item.pageNo}}" data-pagesize="{{item.pageSize}}" bindbuttontap="bindbuttontap" buttons="{{buttons}}" bind:tap="toDetail" bindshow="bindshow" wx:for="{{item.list}}" wx:key="index">
+        <view class="flex record-item-content {{item.className}}">
+          <image class="record-item-content-icon" src="{{item.icon}}" mode="aspectFit" />
+          <view class="flex font-text record-item-content-info {{item.infoClass}}">
+            <view>
+              <view class="font-30 record-item-content-info-label">
+                {{item.billType}}
+                <view wx:if="{{!item.recordAccountType}}" class="font-20 warn-color record-item-content-info-label-tip">账户已删除</view>
+              </view>
+              <view class="flex font-desc record-item-content-info-desc">
+                <view>{{item.time}}</view>
+                <view wx:if="{{item.billTypeCode === 'BILL_CASH' && !item.remark}}" class="record-item-content-info-desc-border"></view>
+                <view wx:if="{{item.billTypeCode === 'BILL_CASH' && !item.remark}}">{{item.incomeAccount}}</view>
+                <view wx:if="{{item.payType}}" class="record-item-content-info-desc-border"></view>
+                <view wx:if="{{item.payType}}">{{item.payType}}</view>
+                <view wx:if="{{item.remark}}" class="record-item-content-info-desc-border"></view>
+                <view wx:if="{{item.remark}}" class="record-item-content-info-remark">{{item.remark}}
+                </view>
+                <view wx:if="{{!item.remark && item.billTypeCode === 'BILL_REPAY'}}" class="record-item-content-info-desc-border"></view>
+                <view wx:if="{{!item.remark && item.billTypeCode === 'BILL_REPAY'}}" class="record-item-content-info-remark">{{item.accountName}}
+                </view>
+              </view>
+            </view>
+            <view class="font-bold font-title record-item-content-info-amount">
+              <view class="{{item.payAmountClass}}">{{item.payAmount}}</view>
+              <view wx:if="{{item.incomeAmount}}" class="{{item.incomeAmountClass}}">{{item.incomeAmount}}</view>
+            </view>
+          </view>
+        </view>
+      </mp-slideview>
+    </view>
+  </view>
+
+  <view wx:if="{{fetchEnd && list.length}}" class="footer">暂无更多内容</view>
+</view>
+<view wx:if="{{!login || (login && !list.length)}}" class="not-found-container">
+  <not-found wx:if="{{!login}}" type="login" msg="请先登陆账户"></not-found>
+  <not-found wx:if="{{login && !list.length}}" type="data" msg="暂无数据"></not-found>
+</view>

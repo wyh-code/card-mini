@@ -1,0 +1,6 @@
+<!--components/not-found/index.js.wxml-->
+<view class="not-found-container">
+  <image wx:if="{{type === 'login'}}" class="not-found-container-icon" src="../../images/no-login.png" mode="aspectFit" />
+  <image wx:if="{{type === 'data'}}" class="not-found-container-icon" src="../../images/no-data.png" mode="aspectFit" />
+  <view class="not-found-container-msg">{{msg}}</view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "mp-toptips": "weui-miniprogram/toptips/toptips",
+    "not-found": "../../components/not-found/index.js"
+  },
+  "navigationBarTitleText": "账户"
+}

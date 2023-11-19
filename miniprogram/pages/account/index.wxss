@@ -1,0 +1,119 @@
+
+.header {
+  padding: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.user {
+  justify-content: center;
+}
+.header-preview{
+  padding: 0 40rpx;
+}
+.header-preview-item {
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.loginBtn {
+  color: #07cb7c;
+  margin: 20rpx 0;
+  padding: 15rpx 0;
+  border: 2rpx solid #07cb7c;
+  border-radius: 10rpx;
+}
+
+.user-avatar{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-tip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-payable {
+  margin: 20rpx;
+  font-size: 50rpx;
+}
+.info-tip-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-tip-item:first-child{
+  justify-content: start;
+}
+.info-tip-item:last-child{
+  justify-content: flex-end;
+}
+.info-tip-label {
+  margin-right: 10rpx;
+}
+.info-tip-num {
+  font-weight: 500;
+}
+.card {
+  margin-top: 40rpx;
+}
+
+.account-item-container {
+  margin-top: 30rpx;
+}
+
+.account-item {
+  /* background-color: #EDEDED; */
+  /* background-color: #f5f5f5; */
+  background-color: #f9f9fa;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+.account-item-bg {
+  position: absolute;
+}
+.account-item-footer {
+  padding-top: 10rpx;
+  margin-top: 10rpx;
+  border-top: 1rpx solid rgba(0, 0, 0, .1);
+}
+
+.account-item-footer-label {
+  margin-right: 50rpx;
+}
+
+.add-btn {
+  position: fixed;
+  z-index: 99999;
+  right: 40rpx;
+  bottom: 100rpx;
+  border-radius: 40rpx;
+  padding: 15rpx 30rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 8rpx 2rpx rgba(150, 150, 150, 0.3);
+}
+.add-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.add-text {
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-left: 10rpx;
+  color: #07cb7c;
+}
+.active-btn {
+  border: 2rpx solid #07cb7c;
+  padding: 3rpx 20rpx;
+  border-radius: 10rpx;
+}

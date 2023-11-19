@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "backgroundColor": "#f5f5f5",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#f5f5f5",
+  "navigationBarTitleText": "账单详情",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view>
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{errorMsg}}" delay="1500"></mp-toptips>
+  <mp-toptips msg="{{msg}}" type="success" show="{{msg}}" delay="1500"></mp-toptips>
+  <mp-form id="form" models="{{form}}">
+    <mp-cells ext-class="my-cells">
+      <mp-cell class="form_item" prop="accountType" title="账户类型">
+        <picker mode="selector" bindchange="bindAccountType" range='{{accountTypeArray}}' range-key="{{'label'}}" >
+          <view class="picker">{{form.accountType}}</view>
+        </picker>
+      </mp-cell>
+      <mp-cell class="form_item" prop="accountName" title="账户名称">
+        <input bindinput="formInputChange" value="{{form.accountName}}" data-field="accountName" class="weui-input" placeholder="请填写账户名称" />
+      </mp-cell>
+      <mp-cell class="form_item" prop="userName" title="户主姓名">
+        <input bindinput="formInputChange" value="{{form.userName}}" data-field="userName" class="weui-input" placeholder="请填写户主姓名" />
+      </mp-cell>
+      <mp-cell wx:if="{{form.accountTypeCode === 1}}" class="form_item" prop="amountFixed" title="固定额度">
+        <input bindinput="formInputChange" value="{{form.amountFixed}}" data-field="amountFixed" class="weui-input" placeholder="请填写固定额度" />
+      </mp-cell>
+      <mp-cell wx:if="{{form.accountTypeCode === 1}}" class="form_item" prop="amountCurrent" title="当前额度">
+        <input bindinput="formInputChange" value="{{form.amountCurrent}}" data-field="amountCurrent" class="weui-input" placeholder="请填写当前额度" />
+      </mp-cell>
+      <mp-cell class="form_item" prop="amountAvailable" title="可用额度">
+        <input bindinput="formInputChange" value="{{form.amountAvailable}}" data-field="amountAvailable" class="weui-input" placeholder="请填写可用额度" />
+      </mp-cell>
+      <mp-cell wx:if="{{form.accountTypeCode === 1}}" class="form_item" prop="dateBill" title="账单日">
+        <picker mode="selector" bindchange="bindDateBill" range='{{dateArray}}' range-key="{{'name'}}" >
+          <view class="picker">{{form.dateBill}}日</view>
+        </picker>
+      </mp-cell>
+      <mp-cell wx:if="{{form.accountTypeCode === 1}}" class="form_item" prop="dateRepayment" title="还款日">
+        <picker mode="selector" bindchange="bindDateRepayment" range='{{dateArray}}' range-key="{{'name'}}" >
+          <view class="picker">{{form.dateRepayment}}日</view>
+        </picker>
+      </mp-cell>
+    </mp-cells>
+    <button class="weui-btn submit-btn" type="primary" bindtap="submitForm">提交</button>
+  </mp-form>
+</view>
